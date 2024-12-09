@@ -3,6 +3,11 @@ const display = document.getElementById('display');
 const buttons = document.querySelectorAll('button');
 const calculator = document.querySelector('.calculator');
 
+// 계산기의 상태를 추적할 변수들
+let currentInput = '';
+let previousInput = '';
+let operator = '';
+
 // 마우스 움직임에 따른 왜곡 효과
 document.addEventListener('mousemove', (e) => {
     const { clientX: mouseX, clientY: mouseY } = e;
