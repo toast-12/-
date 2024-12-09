@@ -25,12 +25,14 @@ body {
 }
 
 .calculator {
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.9); /* 배경에 투명도 추가 */
     border-radius: 10px;
     padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     transform-origin: center;
     transition: transform 0.1s ease-out;
+    backdrop-filter: blur(5px); /* 배경 블러 효과 추가 */
+    z-index: 1;
 }
 
 .calculator input {
@@ -43,6 +45,7 @@ body {
     border: 1px solid #ddd;
     border-radius: 5px;
     box-sizing: border-box;
+    color: #000; /* 텍스트 색상 검은색 */
 }
 
 .calculator button {
@@ -83,5 +86,15 @@ body {
 
 /* 마우스를 따라 변형 애니메이션 */
 body:hover .calculator {
-    transform: scale(1.05) rotate(5deg);
+    transform: scale(1.05) rotate(5deg); /* 회전 각도 제한 */
+}
+
+/* 마우스를 따라 계산기 왜곡 */
+body {
+    perspective: 1200px; /* 3D 효과를 위한 원근감 설정 */
+}
+
+.calculator {
+    transition: transform 0.1s ease-out; /* 부드러운 애니메이션 */
+    will-change: transform; /* 성능 최적화 */
 }

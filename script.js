@@ -9,8 +9,8 @@ document.addEventListener('mousemove', (e) => {
     const { offsetWidth: width, offsetHeight: height } = calculator;
 
     // 마우스 위치를 계산기에 상대적인 좌표로 변환
-    const rotateX = (mouseY / height - 0.5) * 30;  // -30도에서 30도 사이
-    const rotateY = (mouseX / width - 0.5) * -30;  // -30도에서 30도 사이
+    const rotateX = (mouseY / height - 0.5) * 8;  // 회전 범위 제한 (-8도에서 8도)
+    const rotateY = (mouseX / width - 0.5) * -8;  // 회전 범위 제한 (-8도에서 8도)
 
     // 애니메이션 효과 적용
     calculator.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
